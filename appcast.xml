@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Clippy</title>
+        <link>https://raw.githubusercontent.com/Harman206/clippy-updates/main/appcast.xml</link>
+        <description>Clippy — always-on macOS assistant. Update feed.</description>
+        <language>en</language>
+
+        <!--
+            Each ship appends a NEW <item> at the TOP.
+
+            scripts/release.sh (in the source repo) emits a ready-to-paste
+            snippet with the right EdDSA signature and file length once the
+            notarized zip is built. Sparkle uses the signature to verify the
+            zip wasn't tampered with — without a matching EdDSA signature the
+            install is refused.
+
+            For the initial entry below we deliberately publish no <enclosure>.
+            Sparkle sees that sparkle:version matches what's installed and
+            stops without attempting a download, so the missing URL never
+            gets requested. This is how 0.1.1 users see "You're up to date"
+            on every check until 0.2.0 lands.
+        -->
+
+        <item>
+            <title>Version 0.1.1</title>
+            <pubDate>Sun, 17 May 2026 12:57:26 +0000</pubDate>
+            <sparkle:version>0.1.1</sparkle:version>
+            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Backend reliability: env-newline trimming, Azure audio API pinned, multipart fix, GPT-5 sampling-param sanitisation, GREATEST(0,…) for Postgres.</li>
+                    <li>Whisper transcription locked to English (no accent-driven Hindi/Marathi drift).</li>
+                    <li>Notch dismiss: race fix, dismiss-suppression window, follow-up Fn-ask clears stale answers.</li>
+                    <li>Sign-in error: tap-to-dismiss + 6s auto-dismiss.</li>
+                    <li>Keychain service rename + file-first read so adhoc-signed builds stop popping keychain prompts.</li>
+                    <li>3-layer identity guardrails (input pre-filter + system prompt + output filter).</li>
+                </ul>
+            ]]></description>
+        </item>
+
+    </channel>
+</rss>
