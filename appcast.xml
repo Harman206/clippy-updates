@@ -5,50 +5,33 @@
     <channel>
         <title>Clippy</title>
         <link>https://raw.githubusercontent.com/Harman206/clippy-updates/main/appcast.xml</link>
-        <description>Clippy — always-on macOS assistant. Update feed.</description>
+        <description>Clippy — always-on macOS assistant. Update feed (legacy Sparkle clients only — current app polls GitHub Releases directly).</description>
         <language>en</language>
 
         <!--
-            Each ship appends a NEW <item> at the TOP.
+            Starting with Clippy 0.2.3 the app no longer uses Sparkle —
+            UpdateChecker.swift polls the GitHub Releases API directly.
+            This appcast is kept around so any pre-0.2.3 installs in the
+            wild still see "0.2.3 available" and get pointed at the
+            GitHub release page where they can grab the new DMG.
 
-            scripts/release.sh (in the source repo) emits a ready-to-paste
-            snippet with the right EdDSA signature and file length once the
-            notarized zip is built. Without a signed enclosure Sparkle will
-            still detect that there's a newer version available, but it
-            won't perform the in-place auto-install — users will be sent to
-            the GitHub release page to download the DMG manually.
+            sparkle:releaseNotesLink gives Sparkle a "View More Info…"
+            button; the lack of <enclosure> means Sparkle's in-place
+            installer is skipped (which is fine — the new app has its
+            own checker).
         -->
 
         <item>
-            <title>Version 0.2.2</title>
-            <pubDate>Mon, 18 May 2026 14:00:00 +0000</pubDate>
-            <sparkle:version>0.2.2</sparkle:version>
-            <sparkle:shortVersionString>0.2.2</sparkle:shortVersionString>
+            <title>Version 0.2.3</title>
+            <pubDate>Mon, 18 May 2026 13:48:00 +0000</pubDate>
+            <sparkle:version>0.2.3</sparkle:version>
+            <sparkle:shortVersionString>0.2.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.2</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.3</sparkle:releaseNotesLink>
             <description><![CDATA[
                 <ul>
-                    <li>Removed auto call detection — too many false positives. Manual meeting recording stays.</li>
-                    <li>Stuck integration rows surface a Connect button after 60s instead of hanging.</li>
-                    <li>Carried over: Clips, Composio v3, sign-in stability, monochrome approval UI, auto-update via Sparkle.</li>
-                </ul>
-            ]]></description>
-        </item>
-
-        <item>
-            <title>Version 0.1.1</title>
-            <pubDate>Sun, 17 May 2026 12:57:26 +0000</pubDate>
-            <sparkle:version>0.1.1</sparkle:version>
-            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <description><![CDATA[
-                <ul>
-                    <li>Backend reliability: env-newline trimming, Azure audio API pinned, multipart fix, GPT-5 sampling-param sanitisation, GREATEST(0,…) for Postgres.</li>
-                    <li>Whisper transcription locked to English (no accent-driven Hindi/Marathi drift).</li>
-                    <li>Notch dismiss: race fix, dismiss-suppression window, follow-up Fn-ask clears stale answers.</li>
-                    <li>Sign-in error: tap-to-dismiss + 6s auto-dismiss.</li>
-                    <li>Keychain service rename + file-first read so adhoc-signed builds stop popping keychain prompts.</li>
-                    <li>3-layer identity guardrails (input pre-filter + system prompt + output filter).</li>
+                    <li>Replaced Sparkle with a GitHub Releases poller — no more Keychain prompts on release day.</li>
+                    <li>Click "View More Info…" then download the DMG from the GitHub release page. After installing 0.2.3, future updates check automatically and pop a one-click Download alert.</li>
                 </ul>
             ]]></description>
         </item>
