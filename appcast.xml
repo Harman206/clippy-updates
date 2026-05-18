@@ -20,20 +20,17 @@
         -->
 
         <item>
-            <title>Version 0.2.0</title>
-            <pubDate>Mon, 18 May 2026 11:04:00 +0000</pubDate>
-            <sparkle:version>0.2.0</sparkle:version>
-            <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+            <title>Version 0.2.1</title>
+            <pubDate>Mon, 18 May 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>0.2.1</sparkle:version>
+            <sparkle:shortVersionString>0.2.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.0</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.1</sparkle:releaseNotesLink>
             <description><![CDATA[
                 <ul>
-                    <li>Clips — background sandbox workers. Tasks run as independent Clips in a rail next to the notch; up to 3 in parallel, with click-to-foreground detail and approval gates.</li>
-                    <li>Composio v3 — Slack / Gmail / Calendar / Notion / Linear / GitHub integrations reliable again after Composio retired their v1 API.</li>
-                    <li>Auto-update is live — scheduled checks every 4h plus Check for Updates... in the status menu.</li>
-                    <li>Monochrome approval UI (no more yellow on the notch).</li>
-                    <li>Notch quiet on Clip launch — badge appears without popping the expanded panel.</li>
-                    <li>Approval-button hit-test fix — Approve / Reject no longer dismiss the notch.</li>
+                    <li>Sign-in window no longer re-opens every minute — stale tokens are now cleared the moment the backend reports them invalid.</li>
+                    <li>Polished DMG with night-sky background and paperclip app icon.</li>
+                    <li>Carried over: Clips, Composio v3, live auto-update, monochrome approval UI, approval-button hit-test fix.</li>
                 </ul>
             ]]></description>
         </item>
