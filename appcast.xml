@@ -20,17 +20,17 @@
         -->
 
         <item>
-            <title>Version 0.2.1</title>
-            <pubDate>Mon, 18 May 2026 12:00:00 +0000</pubDate>
-            <sparkle:version>0.2.1</sparkle:version>
-            <sparkle:shortVersionString>0.2.1</sparkle:shortVersionString>
+            <title>Version 0.2.2</title>
+            <pubDate>Mon, 18 May 2026 14:00:00 +0000</pubDate>
+            <sparkle:version>0.2.2</sparkle:version>
+            <sparkle:shortVersionString>0.2.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.1</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.2</sparkle:releaseNotesLink>
             <description><![CDATA[
                 <ul>
-                    <li>Sign-in window no longer re-opens every minute — stale tokens are now cleared the moment the backend reports them invalid.</li>
-                    <li>Polished DMG with night-sky background and paperclip app icon.</li>
-                    <li>Carried over: Clips, Composio v3, live auto-update, monochrome approval UI, approval-button hit-test fix.</li>
+                    <li>Removed auto call detection — too many false positives. Manual meeting recording stays.</li>
+                    <li>Stuck integration rows surface a Connect button after 60s instead of hanging.</li>
+                    <li>Carried over: Clips, Composio v3, sign-in stability, monochrome approval UI, auto-update via Sparkle.</li>
                 </ul>
             ]]></description>
         </item>
