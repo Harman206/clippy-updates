@@ -13,16 +13,30 @@
 
             scripts/release.sh (in the source repo) emits a ready-to-paste
             snippet with the right EdDSA signature and file length once the
-            notarized zip is built. Sparkle uses the signature to verify the
-            zip wasn't tampered with — without a matching EdDSA signature the
-            install is refused.
-
-            For the initial entry below we deliberately publish no <enclosure>.
-            Sparkle sees that sparkle:version matches what's installed and
-            stops without attempting a download, so the missing URL never
-            gets requested. This is how 0.1.1 users see "You're up to date"
-            on every check until 0.2.0 lands.
+            notarized zip is built. Without a signed enclosure Sparkle will
+            still detect that there's a newer version available, but it
+            won't perform the in-place auto-install — users will be sent to
+            the GitHub release page to download the DMG manually.
         -->
+
+        <item>
+            <title>Version 0.2.0</title>
+            <pubDate>Mon, 18 May 2026 11:04:00 +0000</pubDate>
+            <sparkle:version>0.2.0</sparkle:version>
+            <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://github.com/Harman206/clippy-updates/releases/tag/v0.2.0</sparkle:releaseNotesLink>
+            <description><![CDATA[
+                <ul>
+                    <li>Clips — background sandbox workers. Tasks run as independent Clips in a rail next to the notch; up to 3 in parallel, with click-to-foreground detail and approval gates.</li>
+                    <li>Composio v3 — Slack / Gmail / Calendar / Notion / Linear / GitHub integrations reliable again after Composio retired their v1 API.</li>
+                    <li>Auto-update is live — scheduled checks every 4h plus Check for Updates... in the status menu.</li>
+                    <li>Monochrome approval UI (no more yellow on the notch).</li>
+                    <li>Notch quiet on Clip launch — badge appears without popping the expanded panel.</li>
+                    <li>Approval-button hit-test fix — Approve / Reject no longer dismiss the notch.</li>
+                </ul>
+            ]]></description>
+        </item>
 
         <item>
             <title>Version 0.1.1</title>
